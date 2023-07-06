@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Character } from '../../interfaces/character.interface';
 
 @Component({
   selector: 'add-character',
@@ -7,4 +9,21 @@ import { Component } from '@angular/core';
 })
 export class AddComponent {
 
+  @Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
+  public character: Character = {
+    name: '',
+    power: 0
+  }
+
+  public saveCharacter(): void {
+
+    if (this.character.name.length === 0) return;
+
+    // emitimos el caracter que intoduce el usuarios
+    this.onNewCharacter.emit(this.character)
+
+    this.character = { name: '', power: 0 };
+  }
 }
