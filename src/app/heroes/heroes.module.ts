@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { HeroComponent } from "./hero/hero.component";
 import { AppHeroesListComponent } from "./list/app-heroes-list.component";
 
@@ -11,6 +12,9 @@ import { AppHeroesListComponent } from "./list/app-heroes-list.component";
   exports: [
     HeroComponent,
     AppHeroesListComponent
+  ],
+  imports: [
+    CommonModule
   ]
 })
 export class HeroesModule {
