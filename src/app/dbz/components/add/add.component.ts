@@ -13,6 +13,7 @@ export class AddComponent {
   public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   public character: Character = {
+    id: 0,
     name: '',
     power: 0
   }
@@ -24,6 +25,6 @@ export class AddComponent {
     // emitimos el caracter que intoduce el usuarios
     this.onNewCharacter.emit(this.character)
 
-    this.character = { name: '', power: 0 };
+    this.character = { id: 0, name: '', power: 0 };
   }
 }
