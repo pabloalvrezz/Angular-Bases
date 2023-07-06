@@ -1,4 +1,4 @@
-<h4>Listado</h4>
+<h3>Listado de personajes</h3>
 <ul class="list-group">
   <li
     *ngFor="
@@ -21,6 +21,8 @@
       <span>{{ character.power }}</span>
     </div>
 
-    <button (click)="onDeleteCharacter(i)" class="btn btn-danger">X</button>
+    <button (click)="onDeleteCharacter(character.id!)" class="btn btn-danger">
+      X
+    </button>
   </li>
 </ul>
